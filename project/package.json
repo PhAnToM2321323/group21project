@@ -1,0 +1,17 @@
+{
+	"name": "server",
+	"description": "Group Project",
+	"author": "Group 21",
+	"version": "1.0.0",
+	"main": "server.js",
+	"dependencies": {
+		"ejs": "^3.1.10",
+		"express": "^4.21.0",
+		"express-formidable": "^1.2.0",
+		"express-session": "^1.18.1",
+		"mongodb": "^6.9.0"
+	},
+	"scripts": {
+		"start": "node server.js"
+	}
+}

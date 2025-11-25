@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Booking</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- include global CSS -->
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .page-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    label { font-weight: bold; color: #444; }
+    input[type="text"], input[type="number"], input[type="date"] {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 8px 4px;
+      outline: none;
+      background: transparent;
+      font-size: 15px;
+    }
+    button {
+      width: 180px;
+      height: 48px;
+      border-radius: 25px;
+      border: none;
+      background: linear-gradient(135deg, #c04444, #a83232); /* unified red theme */
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      align-self: center;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #a83232, #c04444);
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+    button:active {
+      transform: scale(0.95);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #2196F3;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+  <script>
+    // simple validation for mobile and date
+    function validateForm() {
+      const mobile = document.getElementById("mobile").value.trim();
+      const date = document.getElementById("bookingdate").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const mobileRegex = /^[0-9]{8}$/;
+      if (!mobileRegex.test(mobile)) {
+        alert("Mobile number must be exactly 8 digits.");
+        return false;
+      }
+      if (!date) {
+        alert("Please choose a booking date.");
+        return false;
+      }
+      if (!gender) {
+        alert("Please select guest gender (Male or Female).");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="page-container">
+    <!-- top bar -->
+    <h2>Welcome, <%= user %> – <a href="/logout">Logout</a></h2>
+
+    <!-- edit form -->
+    <form action="/update" method="POST" onsubmit="return validateForm()">
+      <input type="hidden" name="_id" value="<%= booking._id %>">
+
+      <label>Guest Gender:</label>
+      <label><input type="radio" name="gender" value="Mr" <%= booking.bookingid.startsWith('Mr') ? 'checked' : '' %>> Mr</label>
+      <label><input type="radio" name="gender" value="Miss" <%= booking.bookingid.startsWith('Miss') ? 'checked' : '' %>> Miss</label>
+
+
+      <label for="bookingid">Booking ID:</label>
+      <input type="text" id="bookingid" name="bookingid" value="<%= booking.bookingid.replace(/^(Mr|Miss)\s*/, '') %>" required>
+
+
+      <label for="mobile">Mobile:</label>
+      <input type="text" id="mobile" name="mobile" value="<%= booking.mobile %>" required>
+
+      <label for="bookingdate">Date:</label>
+      <input type="date" id="bookingdate" name="bookingdate"
+             value="<%= booking.bookingdate instanceof Date ? booking.bookingdate.toISOString().split('T')[0] : booking.bookingdate %>" required>
+
+      <label for="guests">Guest:</label>
+      <input type="text
+      " id="guests" name="guests" value="<%= booking.guests %>" min="1" required>
+
+
+      <button type="submit">Update</button>
+    </form>
+
+    <!-- back link -->
+    <a class="back-link" href="/find">← Back to Bookings</a>
+  </div>
+</body>
+</html>

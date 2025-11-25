@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Details</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- include global CSS -->
+  <style>
+    body { font-family: 'Montserrat', Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+    h2 { font-weight: 600; color: #333; }
+    .page-container { max-width: 700px; margin: 40px auto; padding: 20px; }
+    .page-title { text-align: center; margin-bottom: 20px; color: #333; font-size: 28px; }
+
+    .card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .card p { margin: 10px 0; font-size: 16px; }
+    .card-actions { margin-top: 20px; }
+
+    .btn { padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 14px; margin-right: 5px; }
+    .btn-edit { background: #2196F3; color: #fff; }
+    .btn-delete { background: #f44336; color: #fff; }
+    .btn-back { background: #777; color: #fff; }
+  </style>
+</head>
+<body>
+  <!-- page container -->
+  <div class="page-container">
+    <!-- page title -->
+    <h1 class="page-title">Booking Details</h1>
+
+    <!-- booking information card -->
+    <div class="card">
+      <p><strong>Booking Name:</strong> <%= booking.bookingid %></p>
+      <p><strong>Mobile:</strong> <%= booking.mobile %></p>
+      <p><strong>Date:</strong> <%= booking.bookingdate %></p>
+      <p><strong>Guests:</strong> <%= booking.guests %></p>
+
+      <!-- action buttons -->
+      <div class="card-actions">
+        <a class="btn btn-edit" href="/edit?_id=<%= booking._id %>">Edit</a>
+        <a class="btn btn-delete" href="/delete?_id=<%= booking._id %>" onclick="return confirm('Delete this booking?')">Delete</a>
+        <a class="btn btn-back" href="/find">Back to List</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
