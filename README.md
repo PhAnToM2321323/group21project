@@ -94,4 +94,111 @@ If confirmed, the booking will be deleted, and the user will be redirected to th
 
 
 
+# 🧭 Group 21 Booking Management System
 
+**Course:** COMP3810 — Cloud Application Development  
+**Group:** 21  
+
+---
+
+## 🧑‍💻 1. Project Info
+
+**Project Name:** Group 21 Booking Management System
+
+**Group Members:**
+| Student Name | SID |
+|---------------|------|
+| *(Hidden)* | 14105066 |
+| *(Hidden)* | 14204695 |
+| *(Hidden)* | 13930136 |
+| Zhao Mingxian | 12987223 |
+| *(Hidden)* | 14088213 |
+
+---
+
+## 🗂️ 2. Project File Introduction
+
+### **Backend: `server.js`**
+A backend built with **Express.js** and **MongoDB**, supporting:
+- **User Authentication** (Register / Login / Logout)
+- **Booking Management** (Create, Read, Update, Delete)
+- **Session Handling** using `express-session`
+- **RESTful JSON APIs** for bookings
+
+**Key Features:**
+- Express setup with routing for authentication and CRUD.
+- MongoDB helper functions (insert, find, update, delete).
+- Server runs on **port 8099** by default.
+
+---
+
+### **Frontend (EJS Templates)**
+
+| File | Description |
+|------|--------------|
+| `create.ejs` | Form for creating a new booking (with validation for gender, name, mobile, date, guests). |
+| `details.ejs` | Shows booking details with **Edit** and **Delete** buttons. |
+| `edit.ejs` | Allows editing a booking (prefilled with the current info). |
+| `list.ejs` | Displays all bookings in a searchable table format. |
+| `login.ejs` | Login form with error handling for authentication. |
+
+---
+
+### **Other Files**
+
+| File | Description |
+|------|--------------|
+| `style.css` | Defines modern and user-friendly styling (supports light/dark themes). |
+| `script.js` | Provides client-side validation for form input (e.g., mobile format). |
+
+---
+
+## ⚙️ Functionality Overview
+
+| Feature | Description |
+|----------|--------------|
+| **User Authentication** | Register, login, and logout with session management. |
+| **Booking Management** | Create, edit, delete, and view booking details. |
+| **Search & Filter** | Find bookings using booking ID or mobile number. |
+| **REST API** | JSON endpoints for programmatic access. |
+
+> 💡 This system can be adapted for any reservation-related service, such as restaurants or event booking.
+
+---
+
+## ☁️ 3. Cloud-Based Server
+
+**Live Deployment:**  
+[https://comp3810self-group21.onrender.com/](https://comp3810self-group21.onrender.com/)
+
+---
+
+## 🧭 4. Operation Guide
+
+### **1️⃣ Login & Logout**
+
+**Login Steps:**
+1. Navigate to **`/login`**.  
+2. Enter a valid **username** and **password**.  
+3. Click **Sign In** to authenticate.  
+4. On success → Redirected to **`/find`**.  
+5. On failure → Error message: *"Invalid username or password."*
+
+**Logout Steps:**
+- Click **Logout** after signing in.  
+- You’ll be redirected to **`/login`** again.
+
+---
+
+### **2️⃣ Booking Management (CRUD Actions)**
+
+| Action | Route | Description |
+|---------|--------|-------------|
+| **Create** | `/create` | Fill the booking form (Gender, Name, Mobile, Date, Guests) and click *Create*. |
+| **Read** | `/find` | Displays all bookings in a table format. Click **Details** for a single booking view. |
+| **Update** | `/edit?_id={booking_id}` | Modify details and click *Update* to save. |
+| **Delete** | `/details?_id={booking_id}` | Click *Delete* to remove, with confirmation prompt. |
+
+---
+
+## 🧩 System Architecture (Simplified)
