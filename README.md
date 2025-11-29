@@ -41,7 +41,7 @@ This file sets up the **backend server** using the **Express.js** framework.
   Default port is **8099**.
 
 ---
-## package.json:
+## package.json(dependencies):
 ### ejs (^3.1.10)
 Embedded JavaScript templating engine for rendering dynamic HTML pages.
 
@@ -288,13 +288,15 @@ curl -X POST http://localhost:8099/api/bookings \
   "guests": 2
 }'
 
+---
 
-Read Bookings:
+### Read Bookings:
 
 curl http://localhost:8099/api/bookings
 
+---
 
-Update a Booking:
+### Update a Booking:
 
 curl -X PUT http://localhost:8099/api/bookings/_id \
 -H "Content-Type: application/json" \
@@ -305,8 +307,9 @@ curl -X PUT http://localhost:8099/api/bookings/_id \
   "guests": 3
 }'
 
+---
 
-Delete a Booking:
+### Delete a Booking:
 
 curl -X DELETE http://localhost:8099/api/bookings/_id
 
