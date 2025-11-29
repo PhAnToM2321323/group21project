@@ -1,5 +1,5 @@
 # 📘 1. Project Information
-**Project Name:** Group 21 Booking Management System  
+**Project Name:** Booking Management System  
 **Group:** Group 21
 
 **Team Members:**
