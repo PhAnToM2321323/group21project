@@ -5,11 +5,11 @@
 **Team Members:**
 | Student Name | SID |
 |---------------|------|
-|  — | 14105066 |
-|  — | 14204695 |
-|  — | 13930136 |
+| MAK Chi Kin | 14105066 |
+| Law Tin Chun | 14204695 |
+| Kwok Kin Yan | 13930136 |
 | Zhao Mingxian | 12987223 |
-|  — | 14088213 |
+| Huang Hao Jin | 14088213 |
 
 ---
 
