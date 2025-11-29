@@ -255,7 +255,7 @@ Response:
 
 #### Create Method
 POST Method
-curl -X POST ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings ^
+curl -X POST ~~ https://comp3810self-group21.onrender.com ~~http://localhost:8099/api/bookings ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MrChan\",\"mobile\":\"88887766\",\"bookingdate\":\"2025-11-25\",\"guests\":3}"
   
