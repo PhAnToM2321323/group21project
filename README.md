@@ -13,8 +13,6 @@
 
 ---
 
-
-
 # 2. Project file introduction:
 ## server.js:
 This file sets up the **backend server** using the **Express.js** framework.  
@@ -91,7 +89,7 @@ These files render the frontend views for different parts of the system.
 # 3. The cloud-based server URL (your server host running on the cloud platform) for testing:
 E.g., https://comp3810sef-group1.render.com/
 
-
+---
 
 # 🧭 4. Operation Guide (User Flow)
 
@@ -152,6 +150,8 @@ E.g., https://comp3810sef-group1.render.com/
 3. Confirm deletion ⟶ booking is removed
 4. Redirects back to **`/find`**
 
+---
+
 ## RESTful CRUD Services
 
 The server exposes several API endpoints that provide CRUD functionality for bookings. Below are the available APIs, along with their HTTP request types and URIs.
@@ -181,6 +181,7 @@ Response:
   "insertedId": "some_id"
 }
 
+---
 
 #### Read Bookings
 
@@ -207,6 +208,7 @@ Response:
   ...
 ]
 
+---
 
 #### Update a Booking
 
@@ -230,6 +232,7 @@ Response:
   "modifiedCount": 1
 }
 
+---
 
 #### Delete a Booking
 
@@ -243,21 +246,31 @@ Response:
   "deletedCount": 1
 }
 
+---
+
 ### Testing command
 
 #### Create Method
 curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
+  
+---
 
 #### Read Method
 curl -X GET https://comp3810self-group21.onrender.com/api/bookings
+
+---
 
 #### Update Method
 curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
 
+---
+
 #### Delete Method
 curl -X DELETE https://comp3810self-group21.onrender.com/api/bookings/_id
+
+---
 
