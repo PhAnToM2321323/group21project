@@ -13,6 +13,7 @@
 
 ---
 
+
 # 2. Project file introduction:
 ## server.js:
 This file sets up the **backend server** using the **Express.js** framework.  
@@ -56,6 +57,8 @@ Middleware for managing user sessions in Express apps.
 ### mongodb (^6.9.0)
 Official MongoDB driver for Node.js, used to connect and interact with MongoDB databases.
 
+---
+
 ## public: css folder(style.css) and js folder(script.js)
 ### `style.css`
 Defines global styling for all pages:
@@ -63,7 +66,6 @@ Defines global styling for all pages:
 - Styles for buttons, input fields, and tables
 - Ensures a clear, user-friendly UI design
 
----
 ### `script.js`
 Provides basic frontend logic:
 - Validates mobile number format
@@ -90,6 +92,7 @@ These files render the frontend views for different parts of the system.
 E.g., https://comp3810sef-group1.render.com/
 
 ---
+
 
 # 🧭 4. Operation Guide (User Flow)
 
@@ -248,29 +251,30 @@ Response:
 
 ---
 
-### Testing command
+### Testing command（in Win cmd)
 
 #### Create Method
-curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
+POST Method
+curl -X POST ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings ^
   -H "Content-Type: application/json" ^
-  -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
+  -d "{\"bookingid\":\"MrChan\",\"mobile\":\"88887766\",\"bookingdate\":\"2025-11-25\",\"guests\":3}"
   
 ---
 
 #### Read Method
-curl -X GET https://comp3810self-group21.onrender.com/api/bookings
+curl -X GET ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings
 
 ---
 
 #### Update Method
-curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
+curl -X PUT ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings/_id ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
 
 ---
 
 #### Delete Method
-curl -X DELETE https://comp3810self-group21.onrender.com/api/bookings/_id
+curl -X DELETE ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings/_id
 
 ---
 
