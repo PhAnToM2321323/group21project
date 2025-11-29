@@ -94,7 +94,6 @@ URL: https://comp3810sef-group1.render.com/
 ## CURL Testing command（in Win cmd)
 
 ### Create Method
-POST Method
 curl -X POST https://comp3810self-group21.onrender.com/api/bookings ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MrChan\",\"mobile\":\"88887766\",\"bookingdate\":\"2025-11-25\",\"guests\":3}"
