@@ -292,7 +292,7 @@ curl -X POST http://localhost:8099/api/bookings \
 
 ### Read Bookings:
 
-curl http://localhost:8099/api/bookings
+curl -X GET http://localhost:8099/api/bookings
 
 ---
 
