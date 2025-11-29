@@ -252,29 +252,30 @@ Response:
 ---
 
 ### Testing command（in Win cmd)
+If use localhost, the URL is: http://localhost:8099
 
 #### Create Method
 POST Method
-curl -X POST ~~ https://comp3810self-group21.onrender.com ~~http://localhost:8099/api/bookings ^
+curl -X POST https://comp3810self-group21.onrender.com/api/bookings ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MrChan\",\"mobile\":\"88887766\",\"bookingdate\":\"2025-11-25\",\"guests\":3}"
   
 ---
 
 #### Read Method
-curl -X GET ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings
+curl -X GET https://comp3810self-group21.onrender.com/api/bookings
 
 ---
 
 #### Update Method
-curl -X PUT ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings/_id ^
+curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
   -H "Content-Type: application/json" ^
   -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
 
 ---
 
 #### Delete Method
-curl -X DELETE ~~https://comp3810self-group21.onrender.com~~http://localhost:8099/api/bookings/_id
+curl -X DELETE https://comp3810self-group21.onrender.com/api/bookings/_id
 
 ---
 
