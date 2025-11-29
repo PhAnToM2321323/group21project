@@ -89,7 +89,32 @@ These files render the frontend views for different parts of the system.
 
 
 # 3. The cloud-based server URL (your server host running on the cloud platform) for testing:
-E.g., https://comp3810sef-group1.render.com/
+URL: https://comp3810sef-group1.render.com/
+
+## Testing command（in Win cmd)
+
+### Create Method
+POST Method
+curl -X POST https://comp3810self-group21.onrender.com/api/bookings ^
+  -H "Content-Type: application/json" ^
+  -d "{\"bookingid\":\"MrChan\",\"mobile\":\"88887766\",\"bookingdate\":\"2025-11-25\",\"guests\":3}"
+  
+---
+
+### Read Method
+curl -X GET https://comp3810self-group21.onrender.com/api/bookings
+
+---
+
+### Update Method
+curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
+  -H "Content-Type: application/json" ^
+  -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
+
+---
+
+### Delete Method
+curl -X DELETE https://comp3810self-group21.onrender.com/api/bookings/_id
 
 ---
 
@@ -170,7 +195,7 @@ Path: /api/bookings
 Request Body:
 
 {
-  "bookingid": "Mr.123",
+  "bookingid": "Mr.Bob",
   "mobile": "12345678",
   "bookingdate": "2025-12-01",
   "guests": 2
@@ -203,7 +228,7 @@ Response:
 [
   {
     "_id": "some_id",
-    "bookingid": "Mr.123",
+    "bookingid": "Mr.Bob",
     "mobile": "12345678",
     "bookingdate": "2025-12-01",
     "guests": 2
@@ -222,7 +247,7 @@ Path: /api/bookings/:id
 Request Body:
 
 {
-  "bookingid": "Mr.124",
+  "bookingid": "Mr.Harry",
   "mobile": "12345679",
   "bookingdate": "2025-12-02",
   "guests": 3
@@ -251,31 +276,38 @@ Response:
 
 ---
 
-### Testing command（in Win cmd)
-If use localhost, the URL is: http://localhost:8099
+### Testing command
+#### Create a Booking:
 
-#### Create Method
-POST Method
-curl -X POST https://comp3810self-group21.onrender.com/api/bookings ^
-  -H "Content-Type: application/json" ^
-  -d "{\"bookingid\":\"MrChan\",\"mobile\":\"88887766\",\"bookingdate\":\"2025-11-25\",\"guests\":3}"
-  
+curl -X POST http://localhost:8099/api/bookings \
+-H "Content-Type: application/json" \
+-d '{
+  "bookingid": "Mr.Bob",
+  "mobile": "12345678",
+  "bookingdate": "2025-12-01",
+  "guests": 2
+}'
+
+
+Read Bookings:
+
+curl http://localhost:8099/api/bookings
+
+
+Update a Booking:
+
+curl -X PUT http://localhost:8099/api/bookings/_id \
+-H "Content-Type: application/json" \
+-d '{
+  "bookingid": "Mr.Harry",
+  "mobile": "12345679",
+  "bookingdate": "2025-12-02",
+  "guests": 3
+}'
+
+
+Delete a Booking:
+
+curl -X DELETE http://localhost:8099/api/bookings/_id
+
 ---
-
-#### Read Method
-curl -X GET https://comp3810self-group21.onrender.com/api/bookings
-
----
-
-#### Update Method
-curl -X PUT https://comp3810self-group21.onrender.com/api/bookings/_id ^
-  -H "Content-Type: application/json" ^
-  -d "{\"bookingid\":\"MissChan\",\"mobile\":\"82387766\",\"bookingdate\":\"2025-11-26\",\"guests\":7}"
-
----
-
-#### Delete Method
-curl -X DELETE https://comp3810self-group21.onrender.com/api/bookings/_id
-
----
-
