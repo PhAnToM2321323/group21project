@@ -91,7 +91,7 @@ These files render the frontend views for different parts of the system.
 # 3. The cloud-based server URL (your server host running on the cloud platform) for testing:
 URL: https://comp3810sef-group1.render.com/
 
-## Testing command（in Win cmd)
+## CURL Testing command（in Win cmd)
 
 ### Create Method
 POST Method
@@ -276,7 +276,7 @@ Response:
 
 ---
 
-### Testing command
+### CURL Testing command
 #### Create a Booking:
 
 curl -X POST http://localhost:8099/api/bookings \
